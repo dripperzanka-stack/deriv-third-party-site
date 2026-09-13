@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Reference - Deriv Third-Party Integration</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <style>
+        .docs-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+        .doc-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-left: 4px solid #ff6b35;
+            border-radius: 5px;
+        }
+        code {
+            background: #e8e8e8;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1>Deriv Integration</h1>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#features">Features</a></li>
+                    <li><a href="#">Documentation</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="docs-container">
+            <h2>API Reference</h2>
+            <p>Welcome to the Deriv Third-Party API documentation.</p>
+
+            <div class="doc-section">
+                <h3>Authentication</h3>
+                <p>All API requests require authentication using OAuth 2.0 or API tokens.</p>
+                <pre>Authorization: Bearer YOUR_API_TOKEN</pre>
+            </div>
+
+            <div class="doc-section">
+                <h3>Base URL</h3>
+                <p>The base URL for all API endpoints is:</p>
+                <pre>https://api.deriv.com/v1</pre>
+            </div>
+
+            <div class="doc-section">
+                <h3>Getting User Info</h3>
+                <p>Retrieve current user information:</p>
+                <pre>GET /user/info</pre>
+                <p>Response:</p>
+                <pre>{
+  "status": "success",
+  "user_id": "12345",
+  "username": "trader",
+  "email": "user@example.com"
+}</pre>
+            </div>
+
+            <div class="doc-section">
+                <h3>Get Markets</h3>
+                <p>Fetch available markets and assets:</p>
+                <pre>GET /markets</pre>
+            </div>
+
+            <div class="doc-section">
+                <h3>Webhooks</h3>
+                <p>Subscribe to real-time events using webhooks. Send a POST request to:</p>
+                <pre>POST /webhooks/subscribe
+Content-Type: application/json
+
+{
+  "event_type": "trade_completed",
+  "callback_url": "https://your-domain.com/webhook"
+}</pre>
+            </div>
+
+            <div class="doc-section">
+                <h3>Error Handling</h3>
+                <p>All errors are returned with appropriate HTTP status codes and error messages:</p>
+                <pre>{
+  "status": "error",
+  "code": "INVALID_TOKEN",
+  "message": "The provided API token is invalid"
+}</pre>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Deriv Third-Party Integration. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

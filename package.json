@@ -1,0 +1,21 @@
+{
+  "name": "deriv-third-party-site",
+  "version": "1.0.0",
+  "description": "A third-party integration site for Deriv",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "test": "jest"
+  },
+  "keywords": [
+    "deriv",
+    "trading",
+    "integration",
+    "api"
+  ],
+  "author": "dripperzanka-stack",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
